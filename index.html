@@ -42,6 +42,14 @@
          </div>
       </div>
       <script src="https://cdn.jsdelivr.net/ga-lite/latest/ga-lite.min.js" async></script><script>var galite = galite || {};galite.UA = 'UA-2896196-11'; // Insert your tracking code here</script>
-      <script src="https://raw.githubusercontent.com/th4deu/leadnow/main/embed/leadnow.js?token=ABGF2M5QZ47U7YMYCJQ2SV3BSALAU" async/>
+      <script>
+         (function(d, s, id){
+             var js, ljs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "https://leadnow-s3.s3.us-west-2.amazonaws.com/embed/leadnow.js";
+             ljs.parentNode.insertBefore(js, ljs);
+         }(document, 'script', 'leadnow-js'));
+     </script>
    </body>
 </html>
