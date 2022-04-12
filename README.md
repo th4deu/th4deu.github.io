@@ -1,1 +1,1 @@
-site
+goto: https://thadeu.com
