@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="refresh" content="5; URL=https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2nREYk5kse-Nx5-Fja0AE5tLEJ2T3eM39EUKowoq2eAY2RZgNeHotTlWy5Edh8m2Ram9y0odkj">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionamento</title>
     <style>
         body {
@@ -12,40 +13,62 @@
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #FFEBB5, #FFD56B);
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
             color: #333333;
             text-align: center;
         }
         .container {
-            max-width: 600px;
+            max-width: 90%;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
         h1 {
-            font-size: 2.5em;
-            color: #FF6F00;
+            font-size: 2em;
+            color: #333333;
             margin-bottom: 20px;
         }
         p {
-            font-size: 1.2em;
+            font-size: 1.0em;
         }
         a {
-            color: #FF6F00;
+            color: #ffffff;
+            padding: 10px 0;
             text-decoration: none;
             font-weight: bold;
+            display: inline-block;
+            width: 100%;
         }
         a:hover {
             text-decoration: underline;
+        }
+        .btn {
+            background-color: #FF6F00;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #FF3300;
+        }
+        @media (min-width: 600px) {
+            .container {
+                max-width: 600px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Redirecionando...</h1>
-        <p>Você está sendo redirecionado para a página desejada.</p>
-        <p>Se não for redirecionado automaticamente em 5 segundos, <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2nREYk5kse-Nx5-Fja0AE5tLEJ2T3eM39EUKowoq2eAY2RZgNeHotTlWy5Edh8m2Ram9y0odkj">clique aqui</a>.</p>
+        <p>Você está sendo redirecionado para a agenda do Thadeu.</p>
+        <p>Se não for redirecionado automaticamente em 5 segundos...</p>
+        <div class="btn">
+            <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ2nREYk5kse-Nx5-Fja0AE5tLEJ2T3eM39EUKowoq2eAY2RZgNeHotTlWy5Edh8m2Ram9y0odkj">Clique Aqui</a>
+        </div>
     </div>
 </body>
 </html>
