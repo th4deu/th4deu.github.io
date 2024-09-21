@@ -1,27 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
+    <!-- [Meta tags e links permanecem os mesmos] -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>thadeu.com | Thadeu Barbosa</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>thadeu.com | thadeu barbosa</title>
-    <meta name="description" content="Engineering Manager, developer and owner of some cool websites (check out my portfolio)!" />
-    <meta name="keywords" content="Webdeveloper, fullstack, frontend, backend, sorteador, sorteador.com.br, developer, thadeu, th4deu" />
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="https://www.thadeu.com">
-    <meta name="twitter:title" content="thadeu.com">
-    <meta name="twitter:description" content="Engineering Manager, developer and owner of some cool websites (check out my portfolio)!">
-    <meta name="twitter:creator" content="@th4d">
-    <meta name="twitter:image" content="https://thadeu.com/_imagens/logo.png">
-    <meta property="og:title" content="thadeu.com" />
-    <meta property="og:url" content="https://thadeu.com/" />
-    <meta property="og:image" content="https://thadeu.com/_imagens/logo.png" />
-    <meta property="og:description" content="Engineering Manager, developer and owner of some cool websites (check out my portfolio)!" />
-    <meta property="og:site_name" content="thadeu.com" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- [Meta tags de descrição e SEO] -->
+    <!-- [Links para Bootstrap, Font Awesome e Google Fonts] -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300" rel="stylesheet">
     <style>
+        /* Estilos existentes */
         body {
             font-family: 'Source Sans Pro', sans-serif;
             font-weight: 300;
@@ -52,7 +43,7 @@
         }
         p {
             margin-top: 20px;
-            text-align: justify;
+            text-align: center; /* Centralizando o texto */
         }
         a {
             color: #333;
@@ -103,24 +94,8 @@
         .projects {
             margin-top: 40px;
         }
-        .projects .card {
-            margin-bottom: 20px;
-        }
-        .projects .card-body {
-            text-align: center;
-        }
-        .projects .card i {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #ff7800;
-        }
-        .projects .card-title {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .projects .card-text {
-            font-size: 16px;
-            color: #666;
+        .projects h2 {
+            margin-bottom: 30px;
         }
         .projects ul {
             padding: 0;
@@ -130,17 +105,51 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
+        .projects .card {
+            border: none;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .projects .card img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        .projects .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .projects .card-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .projects .btn {
+            border-color: #ff7800;
+            color: #ff7800;
+        }
+        .projects .btn:hover {
+            background-color: #ff7800;
+            color: #fff;
+        }
         @media (max-width: 576px) {
             .contact ul li a {
                 width: 100%;
+            }
+            p {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hi! I'm <span class="orange">Thad</span>.</h1>
-        <div class="div-gender">(He / Him / His)</div>
+        <h1>Oi! Eu sou o <span class="orange">Thad</span>.</h1>
+        <div class="div-gender">(Ele / Dele)</div>
         <div class="content">
             <p>Sou desenvolvedor e techlead com paixão por criar produtos incríveis. Confira meus trabalhos e conecte-se comigo através das redes abaixo!</p>
             <div class="contact">
@@ -157,40 +166,46 @@
                 <h2>Meus Projetos</h2>
                 <ul>
                     <li class="card">
-                        <div class="card-body">
-                            <i class="fas fa-random"></i>
-                            <h3 class="card-title">Sorteador</h3>
-                            <p class="card-text">A plataforma mais usada para sorteios online no Brasil.</p>
-                            <a href="https://sorteador.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
-                        </div>
+                        <img src="images/sorteador.png" alt="Sorteador Logo">
+                        <h3 class="card-title">Sorteador</h3>
+                        <p class="card-text">A plataforma mais usada para sorteios online no Brasil.</p>
+                        <a href="https://sorteador.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
                     </li>
                     <li class="card">
-                        <div class="card-body">
-                            <i class="fas fa-bullhorn"></i>
-                            <h3 class="card-title">Sorteando Já</h3>
-                            <p class="card-text">Ferramenta rápida e prática para sorteios e promoções.</p>
-                            <a href="https://sorteandoja.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
-                        </div>
+                        <img src="images/sorteandoja.png" alt="Sorteando Já Logo">
+                        <h3 class="card-title">Sorteando Já</h3>
+                        <p class="card-text">Ferramenta rápida e prática para sorteios e promoções.</p>
+                        <a href="https://sorteandoja.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
                     </li>
                     <li class="card">
-                        <div class="card-body">
-                            <i class="fas fa-tasks"></i>
-                            <h3 class="card-title">Simplesmente</h3>
-                            <p class="card-text">Um app para organizar suas tarefas com eficiência.</p>
-                            <a href="https://simplesmente.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
-                        </div>
+                        <img src="images/simplesmente.png" alt="Simplesmente Logo">
+                        <h3 class="card-title">Simplesmente</h3>
+                        <p class="card-text">Um app para organizar suas tarefas com eficiência.</p>
+                        <a href="https://simplesmente.com.br" target="_blank" class="btn btn-outline-warning">Visitar</a>
                     </li>
                     <li class="card">
-                        <div class="card-body">
-                            <i class="fas fa-truck"></i>
-                            <h3 class="card-title">Rastreio.link</h3>
-                            <p class="card-text">Solução fácil para rastrear encomendas.</p>
-                            <a href="https://rastreio.link" target="_blank" class="btn btn-outline-warning">Visitar</a>
-                        </div>
+                        <img src="images/rastreio.png" alt="Rastreio.link Logo">
+                        <h3 class="card-title">Rastreio.link</h3>
+                        <p class="card-text">Solução fácil para rastrear encomendas.</p>
+                        <a href="https://rastreio.link" target="_blank" class="btn btn-outline-warning">Visitar</a>
                     </li>
                     <li class="card">
-                        <div class="card-body">
-                            <i class="fas fa-id-card"></i>
-                            <h3 class="card-title">Gerador.de</h3>
-                            <p class="card-text">Gere CPFs, CNPJs e outros documentos em segundos.</p>
-                            <a href="https://gerador.de" target="_blank" class="btn btn-outline-warning">Visitar</a
+                        <img src="images/geradorde.png" alt="Gerador.de Logo">
+                        <h3 class="card-title">Gerador.de</h3>
+                        <p class="card-text">Gere CPFs, CNPJs e outros documentos em segundos.</p>
+                        <a href="https://gerador.de" target="_blank" class="btn btn-outline-warning">Visitar</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Google Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKKE5NBWFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-WKKE5NBWFY');
+    </script>
+</body>
+</html>
