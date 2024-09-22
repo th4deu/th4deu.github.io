@@ -18,11 +18,16 @@
             font-weight: 300;
             font-size: 18px;
             background-color: #f3f4f6;
-            padding: 10px;
+            padding: 20px 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+        }
+        .container {
+            margin: 20px 10px;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
         }
         .content {
             background-color: #fff;
@@ -31,6 +36,12 @@
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 1200px;
+            margin: auto;
+            width: 100%;
+        }
+        .presentation {
+            padding: 10px;
+            text-align: center;
             width: 100%;
         }
         h1 {
@@ -159,8 +170,10 @@
 </head>
 <body>
     <div class="container">
-        <h1>Oi, eu sou o <span class="orange">Thad</span>.</h1>
-        <div class="div-gender">(Ele / Dele)</div>
+        <div class="presentation">
+            <h1>Oi, eu sou o <span class="orange">Thad</span>.</h1>
+            <div class="div-gender">(Ele / Dele)</div>
+        </div>
         <div class="content">
             <p>Sou desenvolvedor e techlead com paixão por criar produtos incríveis. Confira meus trabalhos e conecte-se comigo através das redes abaixo!</p>
             <div class="contact">
