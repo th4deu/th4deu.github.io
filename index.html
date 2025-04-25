@@ -79,18 +79,7 @@
           <div>Software Architecture</div>
           <div>Clean Code</div>
           <div>Domain-Driven Design</div>
-        <!-- Easter Egg -->
-  <div id="easter-egg" class="opacity-60 hover:opacity-100 transition cursor-pointer" title="Click me...">
-    <code>sudo make me a sandwich</code>
-  </div>
 </div>
-
-<script>
-  document.getElementById('easter-egg').addEventListener('click', () => {
-    console.log("Okay. You're the boss.");
-    alert("Permission granted. Sandwich request queued.");
-  });
-</script>
 
       <!-- contatos -->
       <pre class="mb-1 text-sm text-[#00ffae]/70">// thadeu@dev:~$ curl ./socials.txt</pre>
@@ -102,6 +91,18 @@
 
       <!-- footer -->
       <footer class="mt-8 text-center text-xs text-[#00ffae]/40">echo "feito com café ☕ & shell 💻" &gt; /dev/null</footer>
+
+      <!-- Easter Egg -->
+      <div id="easter-egg" class="opacity-60 hover:opacity-100 transition cursor-pointer" title="Click me...">
+        <code>sudo make me a sandwich</code>
+      </div>
+      <script>
+        document.getElementById('easter-egg').addEventListener('click', () => {
+          console.log("Okay. You're the boss.");
+          alert("Permission granted. Sandwich request queued.");
+          window.open('https://buymeacoffee.com/th4deu');
+        });
+      </script>
     </div>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKKE5NBWFY"></script>
