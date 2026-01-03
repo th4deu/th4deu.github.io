@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Blog - Thadeu Barbosa | Artigos sobre Tecnologia, Empreendedorismo e Desenvolvimento</title>
+    <meta name="title" content="Blog - Thadeu Barbosa | Artigos sobre Tecnologia e Desenvolvimento">
+    <meta name="description" content="Artigos sobre desenvolvimento de software, arquitetura, empreendedorismo e liderança técnica. Experiências reais de mais de 20 anos construindo produtos digitais.">
+    <meta name="keywords" content="blog, desenvolvimento, software, Laravel, Node.js, arquitetura, empreendedorismo, liderança, tecnologia">
+    <meta name="author" content="Thadeu Barbosa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://thadeu.com/blog">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thadeu.com/blog">
+    <meta property="og:title" content="Blog - Thadeu Barbosa">
+    <meta property="og:description" content="Artigos sobre desenvolvimento de software, arquitetura, empreendedorismo e liderança técnica.">
+    <meta property="og:image" content="https://thadeu.com/og-image.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thadeu.com/blog">
+    <meta property="twitter:title" content="Blog - Thadeu Barbosa">
+    <meta property="twitter:description" content="Artigos sobre desenvolvimento de software, arquitetura, empreendedorismo e liderança técnica.">
+    <meta property="twitter:image" content="https://thadeu.com/og-image.jpg">
+
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Blog - Thadeu Barbosa",
+      "description": "Artigos sobre desenvolvimento de software, arquitetura, empreendedorismo e liderança técnica",
+      "url": "https://thadeu.com/blog",
+      "author": {
+        "@type": "Person",
+        "name": "Thadeu Barbosa",
+        "url": "https://thadeu.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Thadeu Barbosa"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://thadeu.com"
+      }, {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://thadeu.com/blog"
+      }]
+    }
+    </script>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WKKE5NBWFY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WKKE5NBWFY');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 32px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 72px;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #111;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-brand:hover {
+            color: #ea580c;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #ea580c;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 56px;
+        }
+
+        .header h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #111;
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        /* Post List */
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .post-item {
+            padding: 32px 0;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .post-item:first-child {
+            padding-top: 0;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            line-height: 1.35;
+        }
+
+        .post-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .post-title a:hover {
+            color: #ea580c;
+        }
+
+        .post-excerpt {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .post-tag {
+            font-size: 0.75rem;
+            color: #666;
+            background: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            border: 1px solid #e5e5e5;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .post-tag:hover {
+            background: #ea580c;
+            color: #fff;
+            border-color: #ea580c;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ea580c;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .read-more::after {
+            content: '\2192';
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .theme-toggle:hover {
+            background: #f5f5f5;
+            border-color: #ddd;
+        }
+
+        .theme-icon {
+            font-size: 1.1rem;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: #111111;
+            color: #d4d4d4;
+        }
+
+        body.dark-mode .nav-brand {
+            color: #fff;
+        }
+
+        body.dark-mode .nav-brand:hover {
+            color: #fb923c;
+        }
+
+        body.dark-mode .nav-link {
+            color: #888;
+        }
+
+        body.dark-mode .nav-link:hover,
+        body.dark-mode .nav-link.active {
+            color: #fb923c;
+        }
+
+        body.dark-mode .header h1 {
+            color: #fff;
+        }
+
+        body.dark-mode .header .subtitle {
+            color: #888;
+        }
+
+        body.dark-mode .post-item {
+            border-bottom-color: #1a1a1a;
+        }
+
+        body.dark-mode .post-date {
+            color: #666;
+        }
+
+        body.dark-mode .post-title {
+            color: #fff;
+        }
+
+        body.dark-mode .post-title a:hover {
+            color: #fb923c;
+        }
+
+        body.dark-mode .post-excerpt {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .post-tag {
+            background: #1a1a1a;
+            color: #888;
+            border-color: #333;
+        }
+
+        body.dark-mode .post-tag:hover {
+            background: #fb923c;
+            color: #000;
+            border-color: #fb923c;
+        }
+
+        body.dark-mode .read-more {
+            color: #fb923c;
+        }
+
+        body.dark-mode .theme-toggle {
+            background: #1a1a1a;
+            border-color: #333;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background: #222;
+            border-color: #444;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 48px 24px;
+            }
+
+            .nav {
+                margin-bottom: 56px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .header h1 {
+                font-size: 1.85rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .post-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.65rem;
+            }
+
+            .post-title {
+                font-size: 1.15rem;
+            }
+
+            .post-excerpt {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="/" class="nav-brand">Thadeu Barbosa</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/blog" class="nav-link active">Blog</a>
+                <button class="theme-toggle" aria-label="Alternar tema">
+                    <span class="theme-icon">&#x2600;&#xFE0F;</span>
+                </button>
+            </div>
+        </nav>
+
+        <header class="header">
+            <h1>Blog</h1>
+            <p class="subtitle">Artigos sobre tecnologia, empreendedorismo e as histórias por trás dos projetos que construí ao longo dos anos.</p>
+        </header>
+
+        <main>
+            <div class="posts-list">
+                <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+                    <time class="post-date" datetime="2026-01-03" itemprop="datePublished">3 de Janeiro, 2026</time>
+                    <h2 class="post-title" itemprop="headline">
+                        <a href="/blog/como-nasceu-o-sorteador-em-2009" itemprop="url">Como o Sorteador nasceu — e por que ainda existe 17 anos depois</a>
+                    </h2>
+                    <p class="post-excerpt" itemprop="description">
+                        Em 2009, vi uma oportunidade e registrei o domínio sorteador.com.br. Naquela mesma noite, subi a primeira versão. Dezessete anos depois, o site continua lá, com um único objetivo: sortear de forma justa e transparente.
+                    </p>
+                    <div class="post-tags">
+                        <a href="#" class="post-tag" itemprop="keywords">Empreendedorismo</a>
+                        <a href="#" class="post-tag" itemprop="keywords">Sorteador</a>
+                        <a href="#" class="post-tag" itemprop="keywords">PHP</a>
+                    </div>
+                    <a href="/blog/como-nasceu-o-sorteador-em-2009" class="read-more">Ler artigo</a>
+                </article>
+
+                <!-- Template para futuros posts:
+                <article class="post-item" itemscope itemtype="https://schema.org/BlogPosting">
+                    <time class="post-date" datetime="YYYY-MM-DD" itemprop="datePublished">Data</time>
+                    <h2 class="post-title" itemprop="headline">
+                        <a href="/blog/slug" itemprop="url">Título do Post</a>
+                    </h2>
+                    <p class="post-excerpt" itemprop="description">
+                        Resumo do post...
+                    </p>
+                    <div class="post-tags">
+                        <a href="#" class="post-tag" itemprop="keywords">Tag</a>
+                    </div>
+                    <a href="/blog/slug" class="read-more">Ler artigo</a>
+                </article>
+                -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        const themeIcon = document.querySelector('.theme-icon');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeIcon.innerHTML = '&#x1F319;';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeIcon.innerHTML = '&#x2600;&#xFE0F;';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            setTheme(isDark ? 'light' : 'dark');
+        });
+
+        setTheme(currentTheme);
+    </script>
+</body>
+</html>
