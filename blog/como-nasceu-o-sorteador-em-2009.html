@@ -663,56 +663,62 @@
             </header>
 
             <div class="article-content" itemprop="articleBody">
-                <p>Em 2009, eu tinha acabado de voltar do Rio de Janeiro pra Belo Horizonte pra criar minha empresa, a UAISE. Trabalhávamos com .NET, mas eu queria continuar me desenvolvendo em PHP e estava buscando algum projeto pessoal pra isso.</p>
+                <p>Em 2009, eu tinha acabado de voltar do Rio de Janeiro pra Belo Horizonte pra criar minha empresa, a <a href="https://uaise.com" target="_blank">UAISE</a>. Trabalhávamos com .NET e eu cuidava mais da parte de arquitetura e infraestrutura por já termos um time de desenvolvedores, em paralelo, eu queria continuar me desenvolvendo em PHP e estava buscando algum projeto pessoal pra isso.</p>
 
-                <p>Navegando pela internet, vi um sorteio sendo realizado em um site gringo e pensei: deve existir algo assim em português. Busquei por sorteador.com.br, certo de que já existiria. Pra minha surpresa, o domínio estava livre!</p>
+                <p>Navegando pela internet, vi um sorteio sendo realizado em um site gringo e pensei: <i>deve existir algo assim em português</i>. Busquei por <strong><a href="https://sorteador.com.br" target="_blank">sorteador.com.br</a></strong>, certo de que já existiria. Pra minha surpresa, o domínio estava livre!</p>
 
-                <p>Naquela mesma noite, registrei o domínio e subi a primeira versão. Era maio de 2009. O código era o mínimo necessário: HTML, CSS e um backend em PHP. A logo veio de um gerador online que adicionava o selo "beta" — estilo Flickr, que estava na moda na época. O site rodava em uma hospedagem compartilhada, o que parecia suficiente naquele momento, mas me daria muita dor de cabeça no futuro (e muito aprendizado de infraestrutura, mas isso fica pra outro post!).</p>
+                <p>Naquela mesma noite, registrei o domínio e subi a primeira versão. Era maio de 2009. O código era o mínimo necessário: HTML, CSS e um backend em PHP. A logo veio de um gerador online que adicionava o selo "beta" — estilo Flickr, que estava na moda na época (até as cores, se observar, reflete o antigo flickr - dá um google depois pra ver 😅). O site rodava em uma hospedagem compartilhada, o que foi suficiente naquele momento, mas me daria muita dor de cabeça no futuro (papo pra outro post!).</p>
 
                 <figure>
                     <img src="/images/sorteador-v1.png" alt="Primeira versão do Sorteador, maio de 2009" loading="lazy">
                     <figcaption>Primeira versão do Sorteador, maio de 2009</figcaption>
                 </figure>
 
-                <p>Custou algumas horas de sono, mas naquela mesma noite o site já estava no ar. Eu era o dev, o designer, o produto e o marketing. Esse é um ponto que acredito muito: <strong>um programador que entende de produto consegue, sozinho, fazer o que a maioria das empresas busca em um time inteiro pra começar uma ideia.</strong></p>
+                <p>Custou algumas horas de sono, mas naquela mesma noite a primeira versão do site já estava no ar. Eu fui o dev, o designer, o produto e o marketing. Esse é um ponto que acredito muito: <strong>um programador que entende de produto consegue, sozinho, fazer o que a maioria das empresas busca em um time inteiro pra começar uma ideia ou projeto.</strong></p>
 
-                <p>Adicionei o Google Analytics, publiquei e voltei a focar na empresa. O site ficou no ar funcionando sozinho — eu só entrava pra dar manutenção nas horas vagas.</p>
+                <p>Adicionei o Google Analytics, publiquei e continuei a focar na empresa. O site ficou no ar funcionando sozinho — eu só entrava pra dar manutenção nas horas vagas e finais de semana, quando precisava.</p>
 
-                <p>Uma curiosidade daquela época: o Google ainda não era tão onipresente como é hoje. Cadê?, Yahoo e outros buscadores ainda tinham relevância, e existiam sites que funcionavam como catálogos onde você cadastrava seu site pra ser encontrado — e que depois seriam indexados pelo Google. Nesse cenário, brasileiro tinha o hábito de buscar serviços direto pelo domínio. Quer um sorteador? Digita sorteador.com.br. Quer charges? charges.com.br. Eu já sabia disso e foi um dos motivos de ter registrado o domínio tão rápido. Sem fazer nenhum trabalho de SEO, o site começou a crescer sozinho!</p>
+                <p>Uma curiosidade daquela época: o Google ainda não era tão onipresente como é hoje. Cadê?, Yahoo e outros buscadores ainda tinham alguma relevância, e existiam sites que funcionavam como catálogos onde você cadastrava seu site pra ser encontrado — e que depois seriam indexados pelo Google. Nesse cenário, o brasileiro tinha o hábito de buscar serviços direto pelo domínio. Quer um sorteador? Digita <u>sorteador.com.br</u>. Quer charges? <u>charges.com.br</u> (saudades, quem viveu essa época deve conhecer também). Eu já sabia disso e foi um dos motivos de ter registrado o domínio tão rápido. Antes de qualquer trabalho de SEO, o site já tinha começado a crescer sozinho!</p>
 
                 <h2>O primeiro susto</h2>
 
-                <p>Um ano depois, atrasei a renovação do domínio por descuido e o site ficou offline por algumas horas. Recebi uma mensagem no Facebook de alguém que me localizou pra reclamar — a pessoa precisava fazer um sorteio e o site estava fora do ar!</p>
+                <p>Um ano depois, atrasei a renovação do domínio por esquecimento e o site ficou offline por algumas horas. Não demorou muito e recebi uma mensagem no Facebook de alguém que me localizou pra reclamar — a pessoa precisava fazer um sorteio e o site estava fora do ar!</p>
 
-                <p>Foi um susto! Eu evitava redes sociais na época, então alguém ter ido até lá me procurar significava algo. Quando abri o Analytics, entendi: o Sorteador já tinha virado referência sem eu perceber.</p>
+                <p>Passado o susto, principalmente porque desde aquela época eu evitava redes sociais, alguém ter ido até lá me procurar significava algo. Quando abri o Analytics, entendi: o Sorteador já tinha virado referência sem eu perceber.</p>
 
                 <p>A partir dali, comecei a acompanhar de perto, observar como as pessoas usavam o site e entender os problemas reais.</p>
 
                 <h2>A primeira vulnerabilidade</h2>
 
-                <p>A primeira versão fazia a lógica do sorteio no frontend, e não demorou pra descobrirem que dava pra alterar a requisição e forçar o resultado. Corrigi ainda no primeiro ano, mas foi só o começo. Quanto maior o site ficava, mais gente tentava burlar e mais eu precisava evoluir a plataforma pra me manter à frente.</p>
+                <p>A primeira versão fazia a lógica do sorteio no frontend, e não demorou pra descobrirem que dava pra alterar a requisição e forçar o resultado. Corrigi ainda no primeiro ano, mas foi só o começo. Quanto maior o site ficava, mais gente tentava burlar e mais eu precisava evoluir a plataforma pra me manter à frente. É uma corrida constante! :-)</p>
 
+                <p>Parafraseando um líder com quem trabalho atualmente:</p>
                 <blockquote>
-                    <p>Parafraseando um líder com quem trabalho atualmente: é preciso "matar o próprio negócio" pra poder se reinventar e oferecer diferencial.</p>
+                    <p>É preciso "matar o próprio negócio" pra poder se reinventar e oferecer diferencial.</p>
                 </blockquote>
 
-                <p>Eu já fazia isso na prática, mas nunca tinha ouvido descrito assim. Hoje carrego essa frase comigo pra lembrar de estar sempre em movimento.</p>
+                <p>Eu já fazia isso na prática, mas foi a primeira vez que <i>caiu a ficha</i> sobre isso. Hoje carrego essa frase comigo pra lembrar de estar sempre em movimento.</p>
 
                 <h2>O custo de manter</h2>
 
-                <p>Essa dinâmica nunca parou. Manter o maior site de sorteios do Brasil custa caro — em dinheiro e em energia. Exige atualização constante, decisões rápidas e aceitar que algumas vão dar errado. Já pensei em parar mais de uma vez, principalmente quando o custo de manter parecia não compensar. Mas sempre que isso acontece, algo me puxa de volta.</p>
+                <p>Essa dinâmica não muda. Manter o maior site de sorteios do Brasil tem seu custo — em dinheiro e em energia. Exige atualizações constantes, decisões rápidas e aceitar que algumas vão dar errado. Cansa? Sem dúvidas. Ainda hoje viro noites e finais de semana me dedicando às novas features e versões do site.</p>
 
-                <p>Pensa no quanto fico feliz quando vejo amigos usando o Sorteador, ou quando me mandam print sabendo que é meu! Empresas, escolas, igrejas, influenciadores — todo tipo de gente confiando na plataforma pra fazer sorteios de forma transparente. Esse reconhecimento, mesmo que pequeno, causa um orgulho difícil de explicar.</p>
+                <p>Foco no impacto que causo nas pessoas, o propósito do sorteador. Pensa no quanto fico feliz quando vejo amigos usando o Sorteador, ou quando me mandam print sabendo que é meu! Empresas, escolas, igrejas, influenciadores — todo tipo de gente confiando na plataforma pra fazer sorteios de forma transparente. Esse reconhecimento, mesmo que pequeno, dá um orgulho difícil de explicar.</p>
 
                 <h2>Transparência como valor</h2>
 
-                <p>Transparência e honestidade sempre foram valores importantes pra mim. Quando alguém usa o Sorteador, precisa confiar que o resultado é justo. Essa responsabilidade moldou a forma como construo e mantenho a plataforma — e virou parte de quem eu sou como profissional.</p>
+                <p>
+                Transparência e honestidade sempre foram valores inegociáveis pra mim. Quando alguém usa o Sorteador, precisa confiar que o resultado é justo — e essa responsabilidade molda a forma como construo e mantenho o site e todos os serviços que desenvolvo.
+                <br>
+                Ao longo do tempo, surgiram inúmeros “pedidos” para gerar resultados pré-definidos ou sorteios armados. Todos foram recusados. Transparência, honestidade e integridade são os pilares do Sorteador e não abro mão deles.
+                </p>
+
 
                 <h2>17 anos depois</h2>
 
-                <p>São 17 anos desde aquela noite de maio. A stack mudou várias vezes, o site foi reescrito do zero mais de uma vez, eu mesmo mudei. Se eu pudesse voltar e dar um conselho pro Thad de 2009: registra o domínio, sim. Mas faz o backend direito desde o começo! :-)</p>
+                <p>São 17 anos desde a criação do Sorteador. A stack mudou muitas vezes, o site foi reescrito do zero mais de uma vez, eu mesmo mudei. Se eu pudesse voltar e dar um conselho pro Thad de 2009: registra o domínio, sim. Mas faz o backend e arquitetura direitos desde o começo! :-)</p>
 
-                <p>O domínio que registrei por oportunidade continua lá, resolvendo o mesmo problema simples: sortear algo de forma justa.</p>
+                <p>O domínio que registrei por oportunidade continua online, resolvendo o mesmo problema simples: <u>sortear algo de forma justa.</u></p>
 
                 <div class="highlight">
                     <p><strong>Ficou curioso?</strong> Se quiser saber mais sobre alguma parte dessa história — a dor de cabeça com hospedagem compartilhada, as tentativas de burlar o sistema, as reescritas do zero — comenta lá no <a href="https://linkedin.com/in/th4deu" target="_blank" rel="noopener">post do LinkedIn</a>! Ainda estou desenvolvendo a plataforma do blog, então por enquanto os comentários ficam por lá. :)</p>
