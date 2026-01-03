@@ -410,18 +410,25 @@
             width: 36px;
             height: 36px;
             border-radius: 8px;
-            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+            background: #fff7ed;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 700;
             flex-shrink: 0;
         }
 
+        .project-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: #ea580c;
+        }
+
         .project-icon.secondary {
-            background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+            background: #f3f4f6;
+        }
+
+        .project-icon.secondary svg {
+            fill: #6b7280;
         }
 
         .project-info {
@@ -653,8 +660,20 @@
             color: #fb923c;
         }
 
+        body.dark-mode .project-icon {
+            background: #2a1a00;
+        }
+
+        body.dark-mode .project-icon svg {
+            fill: #fb923c;
+        }
+
         body.dark-mode .project-icon.secondary {
-            background: linear-gradient(135deg, #4b5563 0%, #6b7280 100%);
+            background: #262626;
+        }
+
+        body.dark-mode .project-icon.secondary svg {
+            fill: #9ca3af;
         }
 
         body.dark-mode .stack-card h3 {
@@ -828,38 +847,84 @@
                     <h3>Projetos</h3>
                     <div class="projects-list">
                         <a href="https://sorteador.com.br" class="project-item" target="_blank" rel="noopener">
-                            <div class="project-icon">S</div>
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM7.5 18c-.83 0-1.5-.67-1.5-1.5S6.67 15 7.5 15s1.5.67 1.5 1.5S8.33 18 7.5 18zm0-9C6.67 9 6 8.33 6 7.5S6.67 6 7.5 6 9 6.67 9 7.5 8.33 9 7.5 9zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm0-9c-.83 0-1.5-.67-1.5-1.5S15.67 6 16.5 6s1.5.67 1.5 1.5S17.33 9 16.5 9z"/></svg>
+                            </div>
                             <div class="project-info">
                                 <div class="project-name">Sorteador <span class="project-tag">+10M/mês</span></div>
                                 <div class="project-desc">Maior site de sorteios do Brasil desde 2009</div>
                             </div>
                         </a>
+                        <a href="https://amigosecreto.org" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Amigo Secreto</div>
+                                <div class="project-desc">Organize seu amigo secreto online</div>
+                            </div>
+                        </a>
+                        <a href="https://sorteando.com.br" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Sorteando</div>
+                                <div class="project-desc">Plataforma de sorteios e promoções</div>
+                            </div>
+                        </a>
+                        <a href="https://sorteandoja.com.br" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Sorteando Já</div>
+                                <div class="project-desc">Sorteios instantâneos e rápidos</div>
+                            </div>
+                        </a>
+                        <a href="https://gerador.de" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Gerador.de</div>
+                                <div class="project-desc">Gerador de CPF, CNPJ e dados válidos</div>
+                            </div>
+                        </a>
+                        <a href="https://xablau.email" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Xablau</div>
+                                <div class="project-desc">Email temporário e descartável</div>
+                            </div>
+                        </a>
+                        <a href="https://depois.com.br" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Depois</div>
+                                <div class="project-desc">Agendamento e tarefas futuras</div>
+                            </div>
+                        </a>
+                        <a href="https://simplesmente.com.br" class="project-item" target="_blank" rel="noopener">
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            </div>
+                            <div class="project-info">
+                                <div class="project-name">Simplesmente</div>
+                                <div class="project-desc">Produtividade pessoal simplificada</div>
+                            </div>
+                        </a>
                         <a href="https://uaise.com" class="project-item" target="_blank" rel="noopener">
-                            <div class="project-icon">U</div>
+                            <div class="project-icon">
+                                <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                            </div>
                             <div class="project-info">
                                 <div class="project-name">UAISE</div>
-                                <div class="project-desc">Desenvolvimento de software e produtos digitais</div>
-                            </div>
-                        </a>
-                        <a href="https://cinemaemcena.com.br" class="project-item" target="_blank" rel="noopener">
-                            <div class="project-icon secondary">C</div>
-                            <div class="project-info">
-                                <div class="project-name">Cinema em Cena</div>
-                                <div class="project-desc">Portal de cinema com CMS customizado</div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/thadeu/zx-result-js" class="project-item" target="_blank" rel="noopener">
-                            <div class="project-icon secondary">zx</div>
-                            <div class="project-info">
-                                <div class="project-name">zx-result-js</div>
-                                <div class="project-desc">Result Pattern para JavaScript/TypeScript</div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/thadeu/rack-ecg" class="project-item" target="_blank" rel="noopener">
-                            <div class="project-icon secondary">R</div>
-                            <div class="project-info">
-                                <div class="project-name">rack-ecg</div>
-                                <div class="project-desc">Health check middleware para Ruby apps</div>
+                                <div class="project-desc">Minha empresa de software</div>
                             </div>
                         </a>
                     </div>
