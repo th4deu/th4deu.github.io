@@ -585,23 +585,50 @@
         /* Responsive */
         @media (max-width: 768px) {
             .container {
-                padding: 48px 24px;
+                padding: 40px 6%;
             }
 
             .nav {
-                margin-bottom: 48px;
+                margin-bottom: 40px;
             }
 
             .nav-links {
-                gap: 16px;
+                gap: 14px;
+            }
+
+            .article-header {
+                margin-bottom: 36px;
             }
 
             .article-title {
-                font-size: 2rem;
+                font-size: 1.85rem;
+                margin-bottom: 20px;
             }
 
             .article-content {
                 font-size: 1.1rem;
+            }
+
+            .article-content blockquote {
+                padding-left: 20px;
+                margin: 1.5em 0;
+            }
+
+            .article-content pre {
+                padding: 20px;
+                border-radius: 10px;
+                margin: 1.5em -6%;
+                border-radius: 0;
+            }
+
+            .article-content .highlight {
+                padding: 20px;
+                margin: 2em 0;
+            }
+
+            .article-footer {
+                margin-top: 48px;
+                padding-top: 32px;
             }
 
             .author-card {
@@ -609,27 +636,118 @@
                 gap: 16px;
                 padding: 24px;
             }
+
+            .back-link {
+                margin-top: 32px;
+            }
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 40px 20px;
+                padding: 28px 5%;
+            }
+
+            .nav {
+                margin-bottom: 32px;
+            }
+
+            .nav-brand {
+                font-size: 1.1rem;
+            }
+
+            .nav-link {
+                font-size: 0.85rem;
+            }
+
+            .theme-toggle {
+                width: 36px;
+                height: 36px;
+            }
+
+            .article-meta {
+                margin-bottom: 16px;
+            }
+
+            .article-date {
+                font-size: 0.85rem;
+            }
+
+            .article-reading-time {
+                font-size: 0.8rem;
             }
 
             .article-title {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
+                line-height: 1.25;
+            }
+
+            .article-tag {
+                font-size: 0.7rem;
+                padding: 4px 10px;
             }
 
             .article-content {
-                font-size: 1.05rem;
+                font-size: 1.02rem;
+                line-height: 1.8;
+            }
+
+            .article-content p {
+                margin-bottom: 1.5em;
             }
 
             .article-content h2 {
-                font-size: 1.35rem;
+                font-size: 1.25rem;
+                margin: 2em 0 0.75em;
             }
 
             .article-content h3 {
-                font-size: 1.15rem;
+                font-size: 1.1rem;
+            }
+
+            .article-content figure {
+                margin: 2em 0;
+            }
+
+            .article-content figcaption {
+                font-size: 0.8rem;
+            }
+
+            .article-content .highlight {
+                padding: 16px;
+                font-size: 0.95rem;
+            }
+
+            .author-card {
+                padding: 20px;
+                border-radius: 12px;
+            }
+
+            .author-avatar {
+                width: 52px;
+                height: 52px;
+                font-size: 1.1rem;
+            }
+
+            .author-info h4 {
+                font-size: 1rem;
+            }
+
+            .author-info p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                padding: 24px 4%;
+            }
+
+            .article-title {
+                font-size: 1.35rem;
+            }
+
+            .article-content {
+                font-size: 0.98rem;
             }
         }
     </style>
