@@ -261,9 +261,134 @@
             font-size: 0.8rem;
         }
 
+        .activity {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .activity-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .pulse {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+            flex-shrink: 0;
+        }
+
+        .pulse::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: #22c55e;
+            opacity: 0.5;
+            animation: pulse 1.8s ease-out infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.6); opacity: 0.6; }
+            100% { transform: scale(1.8); opacity: 0; }
+        }
+
+        .activity-label { flex: 1; }
+
+        .activity-meta {
+            color: var(--text-mute);
+            font-size: 0.78rem;
+            font-weight: 400;
+        }
+
+        .heatmap-wrap { padding: 18px; }
+
+        .heatmap {
+            display: grid;
+            grid-template-rows: repeat(7, 1fr);
+            grid-auto-flow: column;
+            gap: 3px;
+            width: 100%;
+        }
+
+        .heatmap span {
+            aspect-ratio: 1;
+            border-radius: 2px;
+            background: var(--lvl-0);
+            transition: outline 0.1s ease;
+        }
+
+        .heatmap span:hover {
+            outline: 1px solid var(--text-soft);
+            outline-offset: 1px;
+        }
+
+        .heatmap span[data-l="1"] { background: var(--lvl-1); }
+        .heatmap span[data-l="2"] { background: var(--lvl-2); }
+        .heatmap span[data-l="3"] { background: var(--lvl-3); }
+        .heatmap span[data-l="4"] { background: var(--lvl-4); }
+
+        :root {
+            --lvl-0: #ebedf0;
+            --lvl-1: #9be9a8;
+            --lvl-2: #40c463;
+            --lvl-3: #30a14e;
+            --lvl-4: #216e39;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --lvl-0: #161b22;
+                --lvl-1: #0e4429;
+                --lvl-2: #006d32;
+                --lvl-3: #26a641;
+                --lvl-4: #39d353;
+            }
+        }
+
+        .heatmap-legend {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+            margin-top: 12px;
+            color: var(--text-mute);
+            font-size: 0.72rem;
+        }
+
+        .heatmap-legend .swatch {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+            background: var(--lvl-0);
+        }
+        .heatmap-legend .swatch[data-l="1"] { background: var(--lvl-1); }
+        .heatmap-legend .swatch[data-l="2"] { background: var(--lvl-2); }
+        .heatmap-legend .swatch[data-l="3"] { background: var(--lvl-3); }
+        .heatmap-legend .swatch[data-l="4"] { background: var(--lvl-4); }
+
+        .activity .empty,
+        .activity .loading {
+            padding: 16px 18px;
+            color: var(--text-mute);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 520px) {
             body { padding: 40px 22px; }
             ul.projects { grid-template-columns: 1fr; }
+            .heatmap-wrap { padding: 14px; }
+            .heatmap { gap: 2px; }
         }
     </style>
 </head>
@@ -289,6 +414,27 @@
             <li><a href="https://depois.com.br" target="_blank" rel="noopener">Depois <span class="arrow">↗</span></a></li>
         </ul>
 
+        <h2>Últimos 12 meses</h2>
+        <section class="activity" aria-label="Contribuições no GitHub no último ano">
+            <div class="activity-header">
+                <span class="pulse" aria-hidden="true"></span>
+                <span class="activity-label" id="gh-summary">Carregando contribuições…</span>
+                <a class="activity-meta" href="https://github.com/th4deu" target="_blank" rel="noopener">@th4deu</a>
+            </div>
+            <div class="heatmap-wrap">
+                <div id="gh-heatmap" class="heatmap" role="img" aria-label="Mapa de contribuições no GitHub no último ano"></div>
+                <div class="heatmap-legend" aria-hidden="true">
+                    <span>menos</span>
+                    <span class="swatch"></span>
+                    <span class="swatch" data-l="1"></span>
+                    <span class="swatch" data-l="2"></span>
+                    <span class="swatch" data-l="3"></span>
+                    <span class="swatch" data-l="4"></span>
+                    <span>mais</span>
+                </div>
+            </div>
+        </section>
+
         <h2>Contato</h2>
         <nav class="links" aria-label="Contatos">
             <a href="mailto:thadeu@thadeu.com" itemprop="email">
@@ -310,6 +456,65 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        (function loadGitHubContributions() {
+            const USER = 'th4deu';
+            const CACHE_KEY = 'gh:' + USER + ':contrib';
+            const CACHE_TTL = 60 * 60 * 1000;
+            const heatmap = document.getElementById('gh-heatmap');
+            const summary = document.getElementById('gh-summary');
+            const fmt = new Intl.NumberFormat('pt-BR');
+            const dateFmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+
+            function render(data) {
+                const days = data.contributions || [];
+                if (!days.length) {
+                    summary.textContent = 'Sem dados de contribuição.';
+                    return;
+                }
+
+                const firstDow = new Date(days[0].date + 'T00:00:00').getDay();
+                const frag = document.createDocumentFragment();
+                for (let i = 0; i < firstDow; i++) {
+                    const pad = document.createElement('span');
+                    pad.style.visibility = 'hidden';
+                    frag.appendChild(pad);
+                }
+                for (const d of days) {
+                    const cell = document.createElement('span');
+                    if (d.level) cell.setAttribute('data-l', String(d.level));
+                    const label = dateFmt.format(new Date(d.date + 'T00:00:00'));
+                    cell.title = d.count + (d.count === 1 ? ' contribuição' : ' contribuições') + ' em ' + label;
+                    frag.appendChild(cell);
+                }
+                heatmap.innerHTML = '';
+                heatmap.appendChild(frag);
+
+                const total = (data.total && (data.total.lastYear || Object.values(data.total)[0])) || days.reduce((a, b) => a + b.count, 0);
+                summary.textContent = fmt.format(total) + ' contribuições no último ano';
+            }
+
+            function fail() {
+                summary.textContent = 'Não foi possível carregar agora.';
+                heatmap.innerHTML = '';
+            }
+
+            try {
+                const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+                if (cached && Date.now() - cached.t < CACHE_TTL) {
+                    render(cached.d);
+                    return;
+                }
+            } catch (_) {}
+
+            fetch('https://github-contributions-api.jogruber.de/v4/' + USER + '?y=last')
+                .then(r => r.ok ? r.json() : Promise.reject(r.status))
+                .then(data => {
+                    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data })); } catch (_) {}
+                    render(data);
+                })
+                .catch(fail);
+        })();
     </script>
 </body>
 </html>
